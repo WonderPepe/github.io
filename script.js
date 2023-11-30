@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
         return words[randomIndex];
     }
 
-   // Function to start the spinning beer bottle animation
+  // Function to start the spinning beer bottle animation
     function startSpinningBeerBottleAnimation() {
-        var beerBottleImage = '🍺'; // Replace with the Unicode representation or image URL
+        var beerBottleImage = document.getElementById('rollingIcon');
         var rotationAngle = 0;
         var animationInterval = setInterval(function () {
-            rollingIconSpan.style.transform = `rotate(${rotationAngle}deg)`;
+            beerBottleImage.style.transform = `rotate(${rotationAngle}deg)`;
             rotationAngle = (rotationAngle + 10) % 360;
         }, 50); // Change the interval as needed
 
         // Stop the animation after 3 seconds
         setTimeout(function () {
             clearInterval(animationInterval);
-            rollingIconSpan.style.transform = ''; // Clear the rotation
+            beerBottleImage.style.transform = ''; // Clear the rotation
             randomWordSpan.textContent = getRandomWord();
         }, 3000);
     }
@@ -41,8 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Start the spinning beer bottle animation
         startSpinningBeerBottleAnimation();
         modal.style.display = 'block';
-    }
-
+    
 
     // When the user clicks on the close button, close the modal
     span.onclick = function () {
