@@ -73,3 +73,7 @@ button {
     cursor: pointer;
     margin-top: 20px;
 }
+#rollingIcon {
+    display: inline-block; /* Ensures inline elements can have transformations */
+    transition: transform 0.05s ease-in-out; /* Enables smooth transition */
+}
