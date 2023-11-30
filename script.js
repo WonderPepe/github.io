@@ -33,16 +33,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 
-
     // When the user clicks the button, open the modal
     btn.onclick = function () {
         // Clear the content of randomWordSpan
         randomWordSpan.textContent = '';
 
-        // Start the rolling icon animation
-        startRollingIconAnimation();
+        // Start the spinning beer bottle animation
+        startSpinningBeerBottleAnimation();
         modal.style.display = 'block';
     }
+
 
     // When the user clicks on the close button, close the modal
     span.onclick = function () {
