@@ -1,6 +1,5 @@
 // script.js
 
-
 document.addEventListener('DOMContentLoaded', function () {
     // Get the modal and the button elements
     var modal = document.getElementById('myModal');
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return words[randomIndex];
     }
 
-  // Function to start the spinning beer bottle animation
+    // Function to start the spinning beer bottle animation
     function startSpinningBeerBottleAnimation() {
         var beerBottleImage = document.getElementById('rollingIcon');
         var rotationAngle = 0;
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Start the spinning beer bottle animation
         startSpinningBeerBottleAnimation();
         modal.style.display = 'block';
-    
+    }
 
     // When the user clicks on the close button, close the modal
     span.onclick = function () {
