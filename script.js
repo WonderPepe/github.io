@@ -1,5 +1,6 @@
 // script.js
 
+
 document.addEventListener('DOMContentLoaded', function () {
     // Get the modal and the button elements
     var modal = document.getElementById('myModal');
@@ -34,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // When the user clicks the button, open the modal
     btn.onclick = function () {
+        // Clear the content of randomWordSpan
+        randomWordSpan.textContent = '';
+
         // Start the rolling icon animation
         startRollingIconAnimation();
         modal.style.display = 'block';
