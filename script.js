@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to get a random word ("yes" or "no")
     function getRandomWord() {
-        var words = ['yes', 'no'];
+        var words = ['Tänään on kuppipäivä!', 'Ei tänään. Mene suorinta tietä kotiin, suihkuun, nukkumaan ja lauantaina töihin'];
         var randomIndex = Math.floor(Math.random() * words.length);
         return words[randomIndex];
     }
