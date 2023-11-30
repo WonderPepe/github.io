@@ -16,22 +16,23 @@ document.addEventListener('DOMContentLoaded', function () {
         return words[randomIndex];
     }
 
-    // Function to start the rolling icon animation
-    function startRollingIconAnimation() {
-        var icons = ['🔄', '⭕', '🔵', '🔴', '🔷', '🔶']; // Add more icons if needed
-        var index = 0;
+   // Function to start the spinning beer bottle animation
+    function startSpinningBeerBottleAnimation() {
+        var beerBottleImage = '🍺'; // Replace with the Unicode representation or image URL
+        var rotationAngle = 0;
         var animationInterval = setInterval(function () {
-            rollingIconSpan.textContent = icons[index];
-            index = (index + 1) % icons.length;
-        }, 200); // Change the interval as needed
+            rollingIconSpan.style.transform = `rotate(${rotationAngle}deg)`;
+            rotationAngle = (rotationAngle + 10) % 360;
+        }, 50); // Change the interval as needed
 
         // Stop the animation after 3 seconds
         setTimeout(function () {
             clearInterval(animationInterval);
-            rollingIconSpan.textContent = ''; // Clear the rolling icon
+            rollingIconSpan.style.transform = ''; // Clear the rotation
             randomWordSpan.textContent = getRandomWord();
         }, 3000);
     }
+
 
     // When the user clicks the button, open the modal
     btn.onclick = function () {
