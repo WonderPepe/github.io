@@ -9,12 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var randomWordSpan = document.getElementById('randomWord');
 	var clickSound = document.getElementById('clickSound'); // Get the audio element
 
-    // Function to get a random word ("yes" or "no")
-    function getRandomWord() {
-        var words = ['Tänään on kuppipäivä!', 'Ei tänään. Mene suorinta tietä kotiin, suihkuun, nukkumaan ja lauantaina töihin'];
-        var randomIndex = Math.floor(Math.random() * words.length);
-        return words[randomIndex];
-    }
+  // Function to get a random word
+function getRandomWord() {
+    var words = [
+        'Tänään on kuppipäivä!',
+        'Ei tänään. Mene suorinta tietä kotiin, suihkuun, nukkumaan ja lauantaina töihin.',
+        'No kai sitä yhden vois ottaa.',
+        'Ylös, ulos ja kupille!',
+		'Fernentaatio kutsuu ja sinä vastaat.',
+		'Tänään sauna on kuuma ja kalja kylmä.',
+    ];
+    var randomIndex = Math.floor(Math.random() * words.length);
+    return words[randomIndex];
+}
+
 
   // Function to start the spinning beer bottle animation
     function startSpinningBeerBottleAnimation() {
