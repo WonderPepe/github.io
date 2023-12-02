@@ -76,4 +76,12 @@ button {
 #rollingIcon {
     display: inline-block; /* Ensures inline elements can have transformations */
     transition: transform 0.05s ease-in-out; /* Enables smooth transition */
+	margin-right: 50px; /* Adjust the margin as needed */
+}/* Spinning Beer Bottle Image */
+#textContainer {
+    margin-right: 100px;
+}
+
+#imageContainer {
+    display: inline-block;
 }

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var span = document.getElementById('closeModalBtn');
     var rollingIconSpan = document.getElementById('rollingIcon');
     var randomWordSpan = document.getElementById('randomWord');
+	var clickSound = document.getElementById('clickSound'); // Get the audio element
 
     // Function to get a random word ("yes" or "no")
     function getRandomWord() {
@@ -15,27 +16,33 @@ document.addEventListener('DOMContentLoaded', function () {
         return words[randomIndex];
     }
 
-    // Function to start the spinning beer bottle animation
+  // Function to start the spinning beer bottle animation
     function startSpinningBeerBottleAnimation() {
+        // Play the click sound
+        clickSound.play();
+
         var beerBottleImage = document.getElementById('rollingIcon');
         var rotationAngle = 0;
         var animationInterval = setInterval(function () {
             beerBottleImage.style.transform = `rotate(${rotationAngle}deg)`;
-            rotationAngle = (rotationAngle + 10) % 360;
-        }, 50); // Change the interval as needed
+            rotationAngle = (rotationAngle + 20) % 360;
+        }, 50);
 
         // Stop the animation after 3 seconds
         setTimeout(function () {
             clearInterval(animationInterval);
-            beerBottleImage.style.transform = ''; // Clear the rotation
+            beerBottleImage.style.transform = '';
             randomWordSpan.textContent = getRandomWord();
-        }, 3000);
+        }, 2000);
     }
 
     // When the user clicks the button, open the modal
     btn.onclick = function () {
         // Clear the content of randomWordSpan
         randomWordSpan.textContent = '';
+
+        // Show the spinning beer bottle image
+        rollingIconSpan.style.display = 'inline-block';
 
         // Start the spinning beer bottle animation
         startSpinningBeerBottleAnimation();

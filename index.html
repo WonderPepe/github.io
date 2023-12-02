@@ -16,17 +16,23 @@
     <button id="openModalBtn">Koit onnees!</button>
 
     
-    <!-- The Modal -->
-	<div id="myModal" class="modal">
+<!-- The Modal -->
+<div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close" id="closeModalBtn">&times;</span>
-        <p>Jaaha! Taitaa käydä nyt niin, että: <img id="rollingIcon" src="beer-bottle.png" alt="Beer Bottle"> <span id="randomWord"></span></p>
-    </div>
-	</div>
+        <!-- Set width and height for the image -->
+         <p style="margin-right: 5px; margin-left: 5px;">Jaaha! Taitaa käydä nyt niin, että: &nbsp <img id="rollingIcon" src="beer-bottle.png" alt="Beer Bottle" style="width: 9px; height: 34px; margin-right:5px;"> <span id="randomWord"></span></p>
+    <!-- Add the audio element -->
+        <audio id="clickSound">
+            <source src="meme-okay-lets-go.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+  </div>
+</div>
+
 
     <script src="script.js"></script>
 </body>
 </html>
-
 
