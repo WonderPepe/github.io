@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <p>Tää on pitäiskö mennä kupittaalle perjantaina töiden jälkeen -peli</p>
 
     <!-- Button to open the modal -->
-    <button id="openModalBtn">Koit onnees!</button>
+    <button id="openModalBtn" class="mainButton">Koit onnees!</button>
 
     
 <!-- The Modal -->
@@ -30,6 +30,23 @@
         </audio>
   </div>
 </div>
+
+    <button id="feedbackBtn" class="mainButton">Anny palautet</button>
+
+    <!-- Feedback modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFeedbackModalBtn">&times;</span>
+            <p>No kelpaako?</p>
+            <button id="yesBtn">No joo</button>
+            <button id="noBtn">Ei toimi huonostikaan</button>
+        </div>
+    </div>
+
+<!-- Language switch -->
+    <span id="languageSwitch" class="flag" title="Switch to English">🇬🇧</span>
+
+    
 
 
     <script src="script.js"></script>
