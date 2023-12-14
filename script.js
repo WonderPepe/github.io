@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
             'Ylös, ulos ja kupille!',
             'Fernentaatio kutsuu ja sinä vastaat.',
             'Tänään sauna on kuuma ja kalja kylmä.',
+			'Fernet päivässä pitää krapulan poissa.',
+			'Tiedät mitä tehdä.',
+			'Tutustut tänään alkoholinkäytön riskirajoihin.',
+			'"Sinuna menisin töihin" - Mika Waltari',
         ];
         var randomIndex = Math.floor(Math.random() * words.length);
         return words[randomIndex];
