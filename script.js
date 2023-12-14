@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var slavaUkrainiModal = document.getElementById('slavaUkrainiModal');
     var closeSlavaUkrainiModalBtn = document.getElementById('closeSlavaUkrainiModalBtn');
     var closeNoCapacityModalBtn = document.getElementById('closeNoCapacityModalBtn');
-	//
-document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('openModalBtn');
+	
+    //click count
+    var clickCountBtn = document.getElementById('openModalBtn');
     var clickCountSpan = document.getElementById('clickCount');
 
     // Function to get the click count from local storage
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clickCountSpan.textContent = getClickCount();
 
     // Event listener for the button click
-    btn.addEventListener('click', function () {
+    clickCountBtn.addEventListener('click', function () {
         // Get the current click count from local storage
         var currentCount = getClickCount();
 
@@ -51,12 +51,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update the click count on the page
         clickCountSpan.textContent = currentCount;
-		
-		 // Add additional text after the click count
+
+        // Add additional text after the click count
         var additionalText = currentCount === 1 ? ' time clicked' : ' times clicked';
         clickCountSpan.nextElementSibling.textContent = additionalText;
+		
+		 // Show pop-up modal based on the click count
+        if (currentCount === 5) {
+            showPopupModal('You\'ve clicked 5 times!');
+        } else if (currentCount === 10) {
+            showPopupModal('You\'ve clicked 10 times!');
+        } else if (currentCount === 15) {
+            showPopupModal('You\'ve clicked 15 times!');
+        } else if (currentCount === 20) {
+            showPopupModal('You\'ve clicked 20 times!');
+        }
+		
+        // This is the correct event listener for the button click
+        randomWordSpan.textContent = '';
+        rollingIconSpan.style.display = 'inline-block';
+        startSpinningBeerBottleAnimation();
+        modal.style.display = 'block';
     });
-});
 
     function getRandomWord() {
         var words = [
@@ -71,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			'Tutustut tänään alkoholinkäytön riskirajoihin.',
 			'"Sinuna menisin töihin" - Mika Waltari',
 			'Ilmatieteenlaitos on luvannut märkää.',
+			'Ei.',
+			'Maistuu juu, maistuuhan se.',
+			'Tänään vaihdat kolikkoja kolpakkoon.',
+			'Tänään ohrapirtelö on palautusjuomasi.',
+			'Merkkaa tuntisi, kerää kamasi. Aikasi on koittanut, avaa kaljasi.',
+			'Sihautuksen todennäköisyys lähentelee ääretöntä.',
         ];
         var randomIndex = Math.floor(Math.random() * words.length);
         return words[randomIndex];
