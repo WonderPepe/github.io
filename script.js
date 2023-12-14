@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var noBtn = document.getElementById('noBtn');
     var languageSwitch = document.getElementById('languageSwitch');
     var currentLanguage = 'fi';
+    var italianFlag = document.getElementById('italianFlag');
+    var noCapacityModal = document.getElementById('noCapacityModal');
+    var russianFlag = document.getElementById('russianFlag');
+    var slavaUkrainiModal = document.getElementById('slavaUkrainiModal');
+    var closeSlavaUkrainiModalBtn = document.getElementById('closeSlavaUkrainiModalBtn');
+    var closeNoCapacityModalBtn = document.getElementById('closeNoCapacityModalBtn');
 
     function getRandomWord() {
         var words = [
@@ -57,7 +63,18 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     window.onclick = function (event) {
-        if (event.target === modal) {
+        // Close the "Slava Ukraini" modal if the user clicks outside of it
+        if (event.target === slavaUkrainiModal) {
+            slavaUkrainiModal.style.display = 'none';
+        }
+
+        // Close the "No Capacity" modal if the user clicks outside of it
+        else if (event.target === noCapacityModal) {
+            noCapacityModal.style.display = 'none';
+        }
+
+        // Close the main modal if the user clicks outside of it
+        else if (event.target === modal) {
             modal.style.display = 'none';
         }
     };
@@ -88,5 +105,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         btn.textContent = currentLanguage === 'fi' ? 'Koit onnees!' : 'Try your luck!';
         feedbackBtn.textContent = currentLanguage === 'fi' ? 'Anny palautet' : 'Give feedback';
+    };
+
+    russianFlag.onclick = function () {
+        // Display the "Slava Ukraini" modal
+        slavaUkrainiModal.style.display = 'block';
+    };
+
+    // Add close event for the "Slava Ukraini" modal
+    closeSlavaUkrainiModalBtn.onclick = function () {
+        slavaUkrainiModal.style.display = 'none';
+    };
+
+    italianFlag.onclick = function () {
+        // Display the "No Capacity" modal
+        noCapacityModal.style.display = 'block';
+    };
+
+    // Add close event for the "No Capacity" modal
+    closeNoCapacityModalBtn.onclick = function () {
+        noCapacityModal.style.display = 'none';
     };
 });

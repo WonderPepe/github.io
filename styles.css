@@ -101,6 +101,9 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+.flag-container {
+    display: flex;
+}
 
 .flag {
     font-size: 24px;
@@ -108,6 +111,10 @@ h1 {
     margin-top: 10px;
 }
 
+/* Add this style to adjust the space between flags if needed */
+.flag + .flag {
+    margin-left: 10px;
+}
 /* Button styling */
 .mainButton, #feedbackBtn {
     padding: 15px 30px;
@@ -140,4 +147,46 @@ button {
     display: inline-block;
     transition: transform 0.05s ease-in-out;
     margin-right: 50px;
+}
+/* Add styles for the Italian flag */
+#italianFlag {
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px; /* Adjust as needed */
+}
+
+/* Adjust styles for the new modal */
+#noCapacityModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#noCapacityModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#noCapacityModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#noCapacityModal .close:hover,
+#noCapacityModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
