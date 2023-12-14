@@ -20,6 +20,43 @@ document.addEventListener('DOMContentLoaded', function () {
     var slavaUkrainiModal = document.getElementById('slavaUkrainiModal');
     var closeSlavaUkrainiModalBtn = document.getElementById('closeSlavaUkrainiModalBtn');
     var closeNoCapacityModalBtn = document.getElementById('closeNoCapacityModalBtn');
+	//
+document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('openModalBtn');
+    var clickCountSpan = document.getElementById('clickCount');
+
+    // Function to get the click count from local storage
+    function getClickCount() {
+        return parseInt(localStorage.getItem('clickCount')) || 0;
+    }
+
+    // Function to set the click count to local storage
+    function setClickCount(count) {
+        localStorage.setItem('clickCount', count.toString());
+    }
+
+    // Display the initial click count on the page
+    clickCountSpan.textContent = getClickCount();
+
+    // Event listener for the button click
+    btn.addEventListener('click', function () {
+        // Get the current click count from local storage
+        var currentCount = getClickCount();
+
+        // Increment the count
+        currentCount++;
+
+        // Update the click count in local storage
+        setClickCount(currentCount);
+
+        // Update the click count on the page
+        clickCountSpan.textContent = currentCount;
+		
+		 // Add additional text after the click count
+        var additionalText = currentCount === 1 ? ' time clicked' : ' times clicked';
+        clickCountSpan.nextElementSibling.textContent = additionalText;
+    });
+});
 
     function getRandomWord() {
         var words = [
@@ -33,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			'Tiedät mitä tehdä.',
 			'Tutustut tänään alkoholinkäytön riskirajoihin.',
 			'"Sinuna menisin töihin" - Mika Waltari',
+			'Ilmatieteenlaitos on luvannut märkää.',
         ];
         var randomIndex = Math.floor(Math.random() * words.length);
         return words[randomIndex];
